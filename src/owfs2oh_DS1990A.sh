@@ -1,5 +1,8 @@
 #!/bin/bash
 #@brief		The script notifies OpenHAB that the number of DS1990A ibutton devices has changed.
+#@author	Helge Klug
+#@copyright	Copyright (c) 2019 Helge Klug
+#@version	1.00
 
 #--------------------------------------------------------------------------------
 # Configuration
