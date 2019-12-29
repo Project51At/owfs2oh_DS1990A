@@ -8,11 +8,13 @@ The script notifies OpenHAB that the number of DS1990A ibutton devices into the 
 2.  Set owner and permissions:
 ```
 chown openhab:openhab /var/lib/openhab2/scripts/owfs2oh_DS1990A/src/owfs2oh_DS1990A.sh
-chmod 774  openhab:openhab /var/lib/openhab2/scripts/owfs2oh_DS1990A/src/owfs2oh_DS1990A.sh
+chmod 774 /var/lib/openhab2/scripts/owfs2oh_DS1990A/src/owfs2oh_DS1990A.sh
 ```
 
 3.  Make sure that your script executable
 ```/var/lib/openhab2/scripts/owfs2oh_DS1990A/src/owfs2oh_DS1990A.sh```
+
+4.  Make sure that the OpenHAB item  that is defined in owfs2oh_DS1990A.sh exit
     
     
 ## Run as a Serive
