@@ -16,9 +16,12 @@ The script notifies OpenHAB that the number of DS1990A ibutton devices into the 
 ## Run as a Serive
 1.  Copy systemd/system/owfs2oh_DS1990A.service  to 
     /etc/systemd/system folder
-2.  Start it:	
-	    sudo systemctl start owfs2oh_DS1990A
-3.  Enable it to run at boot:
-	    sudo systemctl enable owfs2oh_DS1990A
-4.  Stop it:
-	    sudo systemctl stop owfs2oh_DS1990A
+
+2.  Start it
+```sudo systemctl start owfs2oh_DS1990A```
+
+3.  Enable it to run at boot
+```sudo systemctl enable owfs2oh_DS1990A```
+
+4.  Stop it
+```sudo systemctl stop owfs2oh_DS1990A```
