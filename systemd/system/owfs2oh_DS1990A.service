@@ -1,11 +1,11 @@
 [Unit]
 Description=owfs to openHAB: notify DS1990A keys
-After=openhab2.service
+After=openhab.service
 		
 [Service]
 User=openhab
 Group=openhab
-ExecStart=/var/lib/openhab2/scripts/owfs2oh_DS1990A/src/owfs2oh_DS1990A.sh
+ExecStart=/var/lib/openhab/scripts/owfs2oh_DS1990A/owfs2oh_DS1990A.sh
 Restart=always
 
 [Install]
