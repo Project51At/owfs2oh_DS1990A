@@ -3,7 +3,7 @@ The script notifies OpenHAB 3 that the number of DS1990A ibutton devices into th
 
 ## Install  
 1.  Copy wfs2oh_DS1990A/src/owfs2oh_DS1990A.sh to 
-   /var/lib/openhab/scripts/owfs2oh_DS1990A/src/owfs2oh_DS1990A.sh
+   /var/lib/openhab/scripts/owfs2oh_DS1990A/owfs2oh_DS1990A.sh
    
 2.  Set owner and permissions:
 ```
