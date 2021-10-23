@@ -1,13 +1,14 @@
 #!/bin/bash
 #@brief		The script notifies OpenHAB that the number of DS1990A ibutton devices has changed.
 #@author	Helge Klug
-#@copyright	Copyright (c) 2019 Helge Klug
-#@version	1.00
+#@copyright	Copyright (c) 2021 Helge Klug
+#@version	2.00
 
 #--------------------------------------------------------------------------------
 # Configuration
 OpenHabHost='http://localhost:8080'
-OpenHabItem='KeyAccessControl_NumberOfDevices_DS1990A'
+OpenHabItem='OH-ITEM'
+OpenHabToken='OH-TOCKEN'
 
 #--------------------------------------------------------------------------------
 # register variable
@@ -18,13 +19,15 @@ ChangeOpenHabItem ()
 #@brief		Change OpenHAB item via RestApi
 #@param 	$1	Openhab host
 #@param 	$2	Openhab item
-#@param 	$2	Item value
+#@param		S3	Openhab token
+#@param 	$4	Item value
 {
-    curl -X POST 	\
-	--header "Content-Type: text/plain" \
-	--header "Accept: application/json" \
-	-d "$3" \
-	"$1/rest/items/$2"
+	curl -X POST 	\
+		--header "Content-Type: text/plain" \
+		--header "Accept: application/json" \
+		-d "$4" \
+		-u "$3:" \
+		"$1/rest/items/$2"
 }
 
 #--------------------------------------------------------------------------------
@@ -42,9 +45,9 @@ do
 
 	if [[ $NumberOfDevices != $NumberOfDevices_Reg ]]; then
 		NumberOfDevices_Reg=$NumberOfDevices
-		ChangeOpenHabItem $OpenHabHost $OpenHabItem $NumberOfDevices
+		ChangeOpenHabItem $OpenHabHost $OpenHabItem $OpenHabToken $NumberOfDevices
 
-		echo "Number of DS1990A devices changed: $NumberOfDevices" 
+		echo "Number of DS1990A devices changed: $NumberOfDevices"
 	fi;
 
 	# do every second
